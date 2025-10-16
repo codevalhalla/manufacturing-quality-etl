@@ -1,4 +1,4 @@
-# 🏭 Manufacturing Quality ETL Pipeline
+# Manufacturing Quality ETL Pipeline
 
 ## Overview
 
