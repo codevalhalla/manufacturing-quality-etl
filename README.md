@@ -28,3 +28,11 @@ manufacturing-quality-etl/
 ├─ README.md      # This file
 ├─ requirements.txt # Python dependencies
 └─ .gitignore
+
+## Setup
+
+### 1. Clone the repository
+
+```bash
+git clone git@github.com:codevalhalla/manufacturing-quality-etl.git
+cd manufacturing-quality-etl
