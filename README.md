@@ -29,13 +29,51 @@ manufacturing-quality-etl/
 ├─ requirements.txt # Python dependencies
 └─ .gitignore
 ```
-Markdown## Setup
+## Setup
 
 ### 1. Clone the repository
 
 ```bash
 git clone git@github.com:codevalhalla/manufacturing-quality-etl.git
 cd manufacturing-quality-etl
-2. Install Dependencies(Optional: Create and activate a virtual environment first)Bashpip install -r requirements.txt
-3. Place Data FilesEnsure your raw stage-wise data files are placed inside the data/ folder. The pipeline expects files named similar to:assembly_shift_count_stage1.xlsxassembly_shift_count_stage2.xlsxassembly_shift_count_stage3.xlsxUsageRun the Jupyter Notebook to execute the ETL process:Bashjupyter notebook notebooks/shift_quality_etl.ipynb
-The notebook will automatically load, transform, and save the results:The fact table is saved to output/shift_prod_quality_fact.csv.Visualizations (bar charts) are saved to the output/ folder.Output ExampleThe final fact table provides a clear summary of quality issues per shift and product:quality_idshift_idprod_idstage1_good_unit_count...stage3_scrap_counttotal_rework_counttotal_scrap_count1234670012346700395...524241234680012346800750...104035DependenciesPython 3.xPandasNumPyMatplotlibLicenseThis project is licensed under the MIT License.
+```
+### 2. Install Dependencies
+(Optional: Create and activate a virtual environment first)
+```bash
+pip install -r requirements.txt
+```
+### 3. Place Data Files
+Ensure your raw stage-wise data files are placed inside the data/ folder. The pipeline expects files named similar to:
+
+- assembly_shift_count_stage1.xlsx
+- assembly_shift_count_stage2.xlsx
+- assembly_shift_count_stage3.xlsx
+
+### Usage
+Run the Jupyter Notebook to execute the ETL process:
+
+```bash
+jupyter notebook notebooks/shift_quality_etl.ipynb
+```
+
+The notebook will automatically load, transform, and save the results:
+
+- The fact table is saved to output/shift_prod_quality_fact.csv.
+- Visualizations (bar charts) are saved to the output/ folder.
+
+### Output Example
+The final fact table provides a clear summary of quality issues per shift and product:
+
+| quality\_id | shift\_id | prod\_id | stage1\_good\_unit\_count | ... | stage3\_scrap\_count | total\_rework\_count | total\_scrap\_count |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 12346700 | 12346 | 700 | 395 | ... | 5 | 24 | 24 |
+| 12346800 | 12346 | 800 | 750 | ... | 10 | 40 | 35 |
+
+### Dependencies
+- Python 3.x
+- Pandas
+- NumPy
+- Matplotlib
+
+### License
+This project is licensed under the MIT License.
